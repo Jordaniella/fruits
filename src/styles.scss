@@ -1,1 +1,51 @@
-/* You can add global styles to this file, and also import other style files */
+.main {
+  &.fraise {
+    --main-color: #e10000;
+    --secondary-color: #ff9494;
+    --primary-color: #fd6161;
+  }
+  &.banane {
+    --main-color: #ffd902;
+    --secondary-color: #fff394;
+    --primary-color: #fdde61;
+  }
+  &.mure {
+    --main-color: #2b043d;
+    --secondary-color: #e194ff;
+    --primary-color: #d361fd;
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+@font-face {
+  font-family: "acme";
+  src: url(./assets/fonts/Acme-Regular.ttf);
+}
+body {
+  font-family: "acme";
+}
+.center-block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.d-flex {
+  display: flex;
+}
+.is-between {
+  justify-content: space-between;
+  align-items: center;
+}
+.white {
+  color: #ffffff;
+}
+ul li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: #000000;
+}
