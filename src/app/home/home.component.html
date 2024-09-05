@@ -1,13 +1,18 @@
-<main class="main fraise">
+<main class="main {{currentProduct.name}}">
   <div class="home">
     <app-header />
+    <img class="menthe" src="../../assets/images/menthe.webp" alt="decoration fruits"/>
     <div class="content">
       <div class="content-left">
         <div class="title">
           <h1 class="white"><span>Smo</span><span class="left">othie</span></h1>
-          <h1 class="white">
-            <span>{{ allProducts[0].name }}</span>
-          </h1>
+          <div class="current">
+            @for (item of allProducts; track $index) {
+              <h1 class="white"  [ngClass]="{'active': item.name == currentProduct.name}">
+                <span>{{ item.name }}</span>
+              </h1> 
+            }
+          </div>
         </div>
         <p class="white">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore, ab
@@ -15,8 +20,24 @@
           aliquam veniam culpa modi doloribus expedita voluptates odit quae.
           Soluta, deleniti.
         </p>
+        <div class="items d-flex">
+          @for (item of allProducts; track $index) {
+            <div class="item" (click)="changeProducts(item.name)" [ngClass]="{'active': item.name == currentProduct.name}">
+              <img [src]="item.images[0]" [alt]="item.name + 'Smoothie'">
+            </div>
+          }
+        </div>
       </div>
-      <div class="content-right"></div>
+      <div class="content-right">
+        @for (item of allProducts; track $index) {
+          <div class="product" [ngClass]="{'active': item.name == currentProduct.name}">
+            <img [src]="item.images[0]" [alt]="item.name">
+            <img class="main-img deco" [src]="item.images[1]" alt="decoration fruits"/>
+            <img class="first-img deco" [src]="item.images[2]" alt="decoration fruits"/>
+            <img class="last-img deco" [src]="item.images[1]" alt="decoration fruits"/>
+          </div>
+        }
+      </div>
     </div>
     <div class="shape">
       <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">

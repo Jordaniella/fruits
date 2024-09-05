@@ -1,18 +1,18 @@
 .main {
   &.fraise {
-    --main-color: #e10000;
-    --secondary-color: #ff9494;
-    --primary-color: #fd6161;
+    --main-color: #f25c37;
+    --secondary-color: #ff8976;
+    --primary-color: #ffa387;
   }
   &.banane {
-    --main-color: #ffd902;
+    --main-color: #fbb000;
     --secondary-color: #fff394;
-    --primary-color: #fdde61;
+    --primary-color: #ffeccc;
   }
-  &.mure {
-    --main-color: #2b043d;
-    --secondary-color: #e194ff;
-    --primary-color: #d361fd;
+  &.raisin {
+    --main-color: #2d2957;
+    --secondary-color: #d8cfff;
+    --primary-color: #dfd8ff;
   }
 }
 * {
