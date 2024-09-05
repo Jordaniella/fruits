@@ -36,10 +36,10 @@ export class HomeComponent implements OnInit, OnDestroy{
     });
   }
   ngOnInit(): void {
-    // this.x = setInterval(() => {
-    //   if (this.index == 3) this.index = 0
-    //   this.currentProduct = this.allProducts[this.index++]
-    // }, 5000)
+    this.x = setInterval(() => {
+      if (this.index == 3) this.index = 0
+      this.currentProduct = this.allProducts[this.index++]
+    }, 5000)
   }
   ngOnDestroy(): void {
     clearInterval(this.x)
