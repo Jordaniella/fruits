@@ -8,8 +8,54 @@
   width: 100%;
   .nav-logo {
     font-size: 1.2rem;
+    img {
+      width: 40px;
+      height: 40px;
+      object-fit: contain;
+      margin-right: 10px;
+    }
+    span {
+      @media (width < 340px) {
+        display: none;
+      }
+    }
+  }
+  input {
+    display: none;
+    &:checked {
+      & ~ label  {
+        transform: rotate(0deg);
+      }
+      & ~ ul.center-block {
+        transform: scale(1);
+      }
+    }
+  }
+  label {
+    position: relative;
+    z-index: 9999;
+    font-size: 3rem;
+    transform: rotate(180deg);
+    display: none;
+    transition: transform 500ms ease-in-out;
+    @media (width < 600px) {
+      display: flex;
+    }
   }
   ul.center-block {
     gap: 30px;
+    @media (width < 600px) {
+      border-radius: 0% 100% 0% 100% / 0% 0% 100% 100% ;
+      background: #ffffff;
+      position: fixed;
+      right: 0;
+      top: 0;
+      width: clamp(200px,100%,350px);
+      height:clamp(200px,100%,350px);
+      flex-direction: column;
+      transform-origin: top right;
+      transform: scale(0);
+      transition: transform 500ms ease-in-out;
+    }
   }
 }
